@@ -1,1 +1,12 @@
-<p>pokemon-list works!</p>
+<div class="pokemon-grid">
+  <div
+    class="pokemon-card"
+    *ngFor="let pokemon of pokemonList"
+    [ngClass]="getPokemonTypeClass(pokemon.types[0])"
+  >
+    <p class="pokemon-number">#{{ pokemon.id }}</p>
+    <img [src]="pokemon.sprites" alt="Pokemon Thumbnail" />
+    <p class="pokemon-name">{{ capitalizeFirstLetter(pokemon.name) }}</p>
+    <p class="pokemon-types">{{ pokemon.types }}</p>
+  </div>
+</div>
